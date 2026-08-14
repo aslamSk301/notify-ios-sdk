@@ -185,6 +185,27 @@ extension AppDelegate: MessagingDelegate {
 
 ---
 
+## 👤 External User ID (User Identity & Login/Logout)
+
+You can associate the device with your app's user account ID (e.g., database User ID or Email).
+
+```swift
+// When User Logs In:
+Task {
+    let result = await NotifyMVP.setExternalUserId("user_987654")
+    if result.isSuccess {
+        print("External User ID set successfully")
+    }
+}
+
+// When User Logs Out:
+Task {
+    await NotifyMVP.setExternalUserId(nil)
+}
+```
+
+---
+
 ## 📖 API Reference
 
 ### Core Methods
@@ -195,7 +216,7 @@ extension AppDelegate: MessagingDelegate {
 | `NotifyMVP.register()` | Manually sync device metadata and push token with backend. |
 | `NotifyMVP.optIn()` | Enable push notifications for the current device. |
 | `NotifyMVP.optOut()` | Disable push notifications without deleting device record. |
-| `NotifyMVP.setExternalUserId("user_123")` | Bind device to your backend user ID. |
+| `NotifyMVP.setExternalUserId("user_123")` | Bind device to your backend user ID (or `nil` to clear). |
 | `NotifyMVP.setAPNsToken(data)` | Pass raw APNs token data from iOS delegate. |
 | `NotifyMVP.setFCMToken("fcm_token...")` | Pass FCM token string from Firebase Messaging. |
 
