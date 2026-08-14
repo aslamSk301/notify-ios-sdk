@@ -24,7 +24,7 @@ Native iOS SDK for **NotifyMVP** — lightweight, powerful push notification man
 2. Go to **File > Add Package Dependencies...**
 3. Enter the repository URL:
    ```text
-   https://github.com/aslamSk301/notyfy.git
+   https://github.com/aslamSk301/notify-ios-sdk.git
    ```
 4. Select **NotifySDK** package and add it to your app target.
 
