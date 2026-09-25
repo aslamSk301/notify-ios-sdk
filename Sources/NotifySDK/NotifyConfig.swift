@@ -14,7 +14,7 @@ public struct NotifyConfig: Sendable {
     /// - Parameters:
     ///   - appId: Your project appId (e.g., "app_xxxxxxxx")
     ///   - apiKey: Your project apiKey
-    ///   - baseUrl: Backend server URL (e.g., "https://notyfy.vercel.app")
+    ///   - baseUrl: Your Cloudflare Worker URL (e.g. https://your-worker.workers.dev)
     ///   - debugLogging: Enable console logs for debugging (default: false)
     ///   - requestTimeoutMs: HTTP request timeout in milliseconds (default: 15,000)
     ///   - maxRetries: Max network retry attempts (default: 3)

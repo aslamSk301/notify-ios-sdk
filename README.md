@@ -45,6 +45,19 @@ pod install
 
 ---
 
+## `baseUrl`
+
+`baseUrl` is **your** NotifyMVP Cloudflare Worker URL (no trailing slash).
+
+Examples after you deploy `my-app/`:
+
+- `https://notifymvp.<your-account>.workers.dev`
+- `https://notify.yourdomain.com` (custom domain)
+
+`appId` / `apiKey` come from **your** dashboard → Projects.
+
+---
+
 ## 🛠️ Xcode Project Configuration
 
 1. In Xcode, select your app **Target** -> **Signing & Capabilities**.
@@ -86,7 +99,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
             let config = NotifyConfig(
                 appId: "app_xxxxxxxx",          // Your Project App ID
                 apiKey: "your_api_key_here",    // Your Project API Key
-                baseUrl: "https://notyfy.vercel.app",
+                baseUrl: "https://your-worker.workers.dev", // your Worker / custom domain
                 debugLogging: true
             )
             
@@ -138,7 +151,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let config = NotifyConfig(
                 appId: "app_xxxxxxxx",
                 apiKey: "your_api_key",
-                baseUrl: "https://notyfy.vercel.app",
+                baseUrl: "https://your-worker.workers.dev", // your Worker / custom domain
                 debugLogging: true
             )
             

@@ -79,6 +79,7 @@ internal struct RegisterPayload: Encodable, Sendable {
     let deviceOs: String?
     let language: String?
     let timezone: String?
+    let country: String?
     let sdkVersion: String?
     let permissionStatus: String?
     let optedIn: Bool

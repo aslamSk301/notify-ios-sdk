@@ -54,7 +54,14 @@ internal final class DeviceInfoService: Sendable {
         return Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0.0"
     }
 
-    /// Returns language code (e.g. "en").
+    /// Returns region code (e.g. "IN", "US").
+    func getCountry() -> String {
+        if #available(iOS 16.0, macOS 13.0, *) {
+            return Locale.current.region?.identifier ?? ""
+        } else {
+            return Locale.current.regionCode ?? ""
+        }
+    }
     func getLanguage() -> String {
         if #available(iOS 16.0, macOS 13.0, *) {
             return Locale.current.language.languageCode?.identifier ?? "en"

@@ -11,7 +11,7 @@ import UIKit
 /// let config = NotifyConfig(
 ///     appId: "app_xxxxxxxx",
 ///     apiKey: "your_api_key",
-///     baseUrl: "https://notyfy.vercel.app"
+///     baseUrl: "https://your-worker.workers.dev" // your Cloudflare Worker URL
 /// )
 /// await NotifyMVP.initialize(config: config)
 /// ```
@@ -340,6 +340,7 @@ public final class NotifyMVP: NSObject, UNUserNotificationCenterDelegate, @unche
             let deviceOs = deviceInfo.getDeviceOs()
             let language = deviceInfo.getLanguage()
             let timezone = deviceInfo.getTimezone()
+            let country = deviceInfo.getCountry()
             let platform = deviceInfo.getPlatform()
 
             let activeToken = self._fcmToken ?? self._apnsToken ?? ""
@@ -355,6 +356,7 @@ public final class NotifyMVP: NSObject, UNUserNotificationCenterDelegate, @unche
                 deviceOs: deviceOs,
                 language: language,
                 timezone: timezone,
+                country: country.isEmpty ? nil : country,
                 sdkVersion: "1.0.0",
                 permissionStatus: self._permissionStatus,
                 optedIn: self._isOptedIn,
